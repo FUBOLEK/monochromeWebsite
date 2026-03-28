@@ -9,35 +9,125 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="reference/favicon.ico" >
+    <link rel="icon" type="image/x-icon" href="reference/favicon.ico">
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
+    <section class="hero-section">
+        <header>
+            <div class="logo-container">
                 <img src="reference/logo.png" alt="logo" width="100px">
-            <div class="logo-text">
-                <span class="logo-title">MONOCHROME</span>
-                <span class="logo-subtitle">STUDIO</span>
+                <div class="logo-text">
+                    <span class="logo-title">MONOCHROME</span>
+                    <span class="logo-subtitle">STUDIO</span>
+                </div>
             </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <nav class="navigation" id="nav-links">
+                <a href="#games" class="nav-link">GAMES</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#news" class="nav-link">NEWS</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </nav>
+        </header>
+
+        <video class="bg-video" src="reference/main_element_animation.mp4" autoplay loop muted playsinline></video>
+
+        <div class="hero-main">
         </div>
 
-        <nav class="navigation">
-            <a href="#" class="nav-link">GAMES</a>
-            <a href="#" class="nav-link">ABOUT</a>
-            <a href="#" class="nav-link">NEWS</a>
-            <a href="#" class="nav-link">CONTACT</a>
-        </nav>
-    </header>
+        <div class="hero-footer">
+            <a href="#games" class="btn-primary">EXPLORE OUR GAMES</a>
+        </div>
+    </section>
 
-    <video class="bg-video" src="reference/main_element_animation.mp4" autoplay loop muted playsinline></video>
+    <main class="content-sections">
+        <section id="games" class="page-section">
+            <h2 class="section-title">GAMES</h2>
+            <div class="section-grid games-grid">
+                <div class="placeholder-card">
+                    <img class="placeholder-img" src="reference/bg1.png"></img>
+                    <h3>Unbound Time</h3>
+                    <p>A 3D medieval action RPG</p>
+                </div>
+                <div class="placeholder-card">
+                    <div class="placeholder-img">...</div>
+                    <h3>Coming Soon</h3>
+                </div>
+                <div class="placeholder-card">
+                    <div class="placeholder-img">...</div>
+                    <h3>Coming Soon</h3>
+                </div>
+            </div>
+        </section>
 
-    <main>
+        <section id="about" class="page-section alt-bg">
+            <h2 class="section-title">ABOUT STUDIO</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>We are an independent game studio dedicated to crafting immersive, monochrome experiences that
+                        challenge the boundary between art and interactivity. Our games focus on atmosphere, fluidity,
+                        and stark contrasts.</p>
+                </div>
+                <img class="placeholder-img large-placeholder" src="reference/monochrome.png"></img>
+            </div>
+        </section>
+
+        <section id="news" class="page-section">
+            <h2 class="section-title">LATEST NEWS</h2>
+            <div class="section-grid news-grid">
+                <div class="placeholder-card">
+                    <img class="placeholder-img" src="reference/bg2.png"></img>
+                    <h3>Monochrome Helmet</h3>
+                    <p>Our first product just dropped!</p>
+                </div>
+                <div class="placeholder-card">
+                    <div class="placeholder-img"></div>
+                    <h3>Alpha version coming out</h3>
+                    <p>Get ready for the alpha version of our game!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section alt-bg">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-container">
+                <form class="contact-form">
+                    <input type="text" class="form-input" placeholder="Your Name">
+                    <input type="email" class="form-input" placeholder="Your Email">
+                    <textarea class="form-input" rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn-primary">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <a href="#" class="btn-primary">EXPLORE OUR GAMES</a>
+    <footer class="site-footer">
+        <p>&copy; 2026 Monochrome Studio. All rights reserved.</p>
     </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
